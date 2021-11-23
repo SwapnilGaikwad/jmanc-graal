@@ -93,7 +93,6 @@ public class MyBenchmark {
     }
 
     @Benchmark
-    @Fork(jvmArgsPrepend = "-XX:-EnableJVMCIProduct")
     public void tierAll(Blackhole blackhole) {
         int sum = 0;
         for(int i = 0; i < randomNums.length; i++) {
@@ -103,7 +102,7 @@ public class MyBenchmark {
     }
 
     // @Benchmark
-    @Fork(jvmArgsPrepend = "-XX:-EnableJVMCIProduct", jvmArgsAppend="-XX:-TieredCompilation")
+    @Fork(jvmArgsAppend="-XX:-TieredCompilation")
     public void topTierOnly(Blackhole blackhole) {
         int sum = 0;
         for(int i = 0; i < randomNums.length; i++) {

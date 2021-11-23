@@ -1,6 +1,24 @@
 # Manchester JUG Talk
 
-### Tools
+## Demo Steps
+
+On a host
+
+```
+docker build . --tag jmanc
+docker run -it --name jmanc-demo --rm jmanc /bin/bash
+```
+
+Inside the container
+
+```
+cd ~/demo
+./runBenchmark.sh
+./runMyTest.sh
+./runMyJIT.sh
+```
+
+## Tools
 
 Chose a version of [IdealGraphVisualizer](https://www.oracle.com/downloads/graalvm-downloads.html)
 for JDK 11 that suits your OS.
